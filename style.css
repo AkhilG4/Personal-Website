@@ -33,3 +33,27 @@ section {
     height: 1;
     background-color: aquamarine;
 }
+
+
+
+#who-am-i-section .content {
+    /* Initial state for fading animation */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 5s ease 5s; /* Delayed start */
+}
+
+#who-am-i-section.show .content {
+    opacity: 1;
+}
+
+#who-am-i-section .content img {
+    max-width: 100px; 
+    margin-right: 20px; 
+}
+
+#who-am-i-section .content p {
+    
+}
