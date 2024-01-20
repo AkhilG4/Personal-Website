@@ -59,10 +59,31 @@ section {
 
 #who-am-i-section {
     justify-content: flex-start;
-    padding-top: 200px; /* Adjust this value as needed */
+    padding-top: 200px; 
 }
 
 #who-am-i-section .heading {
     font-size: 50px;
 }
 
+.technologies {
+    display: flex; 
+    flex-direction: row-reverse;  
+    gap: 70px; 
+    font-size: 30px;
+    padding-top: 100px;
+}
+
+.technologies .tech-item {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 3s ease, opacity 6s ease;
+    filter: blur(5px);
+    
+}
+
+.technologies .tech-item.show-tech {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
