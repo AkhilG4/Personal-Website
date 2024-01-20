@@ -43,6 +43,9 @@ section {
     justify-content: center;
     opacity: 0;
     transition: opacity 5s ease 5s; /* Delayed start */
+    padding-top: 30px;
+    font-size: 25px;
+    flex-direction: column;
 }
 
 #who-am-i-section.show .content {
@@ -50,10 +53,16 @@ section {
 }
 
 #who-am-i-section .content img {
-    max-width: 100px; 
-    margin-right: 20px; 
+    max-width: 400px;
+    padding-bottom: 20px;
 }
 
-#who-am-i-section .content p {
-    
+#who-am-i-section {
+    justify-content: flex-start;
+    padding-top: 200px; /* Adjust this value as needed */
 }
+
+#who-am-i-section .heading {
+    font-size: 50px;
+}
+
