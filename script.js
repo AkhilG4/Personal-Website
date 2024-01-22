@@ -27,46 +27,43 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach(section => sectionObserver.observe(section));
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const container = document.querySelector('.meteor-shower');
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector('.meteor-shower');
 
-//     function createMeteor() {
-//         const meteor = document.createElement('div');
-//         meteor.classList.add('meteor');
-//         container.appendChild(meteor);
+    function createMeteor() {
+        const meteor = document.createElement('div');
+        meteor.classList.add('meteor');
+        container.appendChild(meteor);
 
-//         const startFromTop = Math.random() < 0.5;
-//         if (startFromTop) {
-//             meteor.style.top = '-100px';
-//             meteor.style.left = `${Math.random() * 100}%`;
-//         } else {
-//             meteor.style.left = '-100px';
-//             meteor.style.top = `${Math.random() * 100}%`;
-//         }
+        // Randomise starting position from left/top
+        const startFromTop = Math.random() < 0.5;
+        if (startFromTop) {
+            meteor.style.top = '-100px';
+            meteor.style.left = `${Math.random() * 100}%`;
+        } else {
+            meteor.style.left = '-100px';
+            meteor.style.top = `${Math.random() * 100}%`;
+        }
 
-//         const endTop = Math.random() * 100 + 100;
-//         const endLeft = endTop
+        const endTop = Math.random() * 100 + 100;
 
-//         meteor.style.animation = `shoot ${Math.random() * 2 + 2}s linear`;
+        // Define the animation
+        meteor.animate([
+            { top: startFromTop ? '-100px' : `${Math.random() * 100}%`, left: startFromTop ? `${Math.random() * 100}%` : '-100px', opacity: 1 },
+            { top: `${endTop}%`, left: `${endTop}%`, opacity: 0 }
+        ], {
+            duration: Math.random() * 10000 + 10000, 
+            fill: 'forwards' 
+        });
 
-//         // Define the animation
-//         meteor.animate([
-//             { top: startFromTop ? '-100px' : `${Math.random() * 100}%`, left: startFromTop ? `${Math.random() * 100}%` : '-100px', opacity: 1 },
-//             { top: `${endTop}%`, left: `${endTop}%`, opacity: 0 }
-//         ], {
-//             duration: Math.random() * 1000 + 2000, // 2 to 4 seconds
-//             fill: 'forwards' // Keep the final state after animation
-//         });
+        setTimeout(() => {
+            meteor.remove();
+        }, 10000); 
+    }
 
-//         // Remove meteor after animation
-//         setTimeout(() => {
-//             meteor.remove();
-//         }, 5000); // Ensure duration is longer than the animation
-//     }
-
-//     // Create meteors at intervals
-//     setInterval(createMeteor, 200); // Adjust interval for meteor frequency
-// });
+    
+    setInterval(createMeteor, 500); 
+});
 
 
 
