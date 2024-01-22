@@ -108,16 +108,5 @@ section {
 }
 
 
-@keyframes shoot {
-    0% {
-        top: -100px; 
-    }
-    100% {
-        top: 100%; 
-        left: 100%; 
-        opacity: 0;
-    }
-}
-
 
 
