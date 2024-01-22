@@ -35,6 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
         meteor.classList.add('meteor');
         container.appendChild(meteor);
 
+        const size = Math.random() * 2 + 2; // Between 1px and 3px
+        meteor.style.width = `${size}px`;
+        meteor.style.height = `${size * 30}px`; // Tail length
+
         // Randomise starting position from left/top
         const startFromTop = Math.random() < 0.5;
         if (startFromTop) {
@@ -62,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     
-    setInterval(createMeteor, 500); 
+    setInterval(createMeteor, 300); 
 });
 
 
