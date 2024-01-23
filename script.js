@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, Math.random() * 5000 + 5000); 
     }
     
-    setInterval(createStar, 100);
+    setInterval(createStar, 50);
     
 });
 
