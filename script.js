@@ -67,7 +67,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     setInterval(createMeteor, 300); 
+
+    function createStar() {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        container.appendChild(star);
+    
+        const size = Math.random() * 2; 
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+    
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+    
+        setTimeout(() => {
+            star.remove();
+        }, Math.random() * 5000 + 5000); 
+    }
+    
+    setInterval(createStar, 100);
+    
 });
+
+
 
 
 
