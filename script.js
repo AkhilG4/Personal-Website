@@ -1,14 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll('section');
-    const techItems = document.querySelectorAll('.technologies .tech-item');
-
-    // Function to add staggered animation to each technology item
-    const animateTechItems = (baseDelay) => {
-        techItems.forEach((item, index) => {
-            const delayTime = baseDelay + (index * 500); 
-            setTimeout(() => item.classList.add('show-tech'), delayTime);
-        });
-    };
 
     const observerOptions = { threshold: 0.0 }; 
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -91,5 +82,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Typing Animation
+    const typewriterElement = document.getElementById('typewriter');
+    const texts = ["Who?", "Akhil"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentText = texts[textIndex];
+        const displayedText = isDeleting
+            ? currentText.substring(0, charIndex--)
+            : currentText.substring(0, charIndex++);
+
+        typewriterElement.textContent = displayedText;
+        typewriterElement.classList.add('typing');
+
+        if (!isDeleting && charIndex === currentText.length + 1) {
+            isDeleting = true;
+            setTimeout(type, 3000); // Pause before deleting
+        } else if (isDeleting && charIndex === -1) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(type, 500); // Pause before typing next word
+        } else {
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(type, typingSpeed);
+        }
+    }
+
+    type();
+});
 
 
