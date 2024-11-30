@@ -241,3 +241,32 @@ section {
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
+.footer {
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-link:hover {
+    color: #00aaff;
+}
+
+.footer-link i {
+    font-size: 20px;
+}
