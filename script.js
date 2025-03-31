@@ -116,4 +116,32 @@ document.addEventListener('DOMContentLoaded', () => {
     type();
 });
 
+function openModal(title, imagePaths) {
+    // Set the modal title
+    document.getElementById("modal-title").innerText = title;
 
+    // Populate the modal with images
+    const modalImagesDiv = document.getElementById("modal-images");
+    modalImagesDiv.innerHTML = ""; // Clear existing content
+    imagePaths.forEach((path) => {
+        const img = document.createElement("img");
+        img.src = path;
+        img.alt = title + " Screenshot";
+        modalImagesDiv.appendChild(img);
+    });
+
+    // Display the modal
+    document.getElementById("projectModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("projectModal").style.display = "none";
+}
+
+// Optional: Close modal when clicking outside of it
+window.onclick = function (event) {
+    const modal = document.getElementById("projectModal");
+    if (event.target === modal) {
+        closeModal();
+    }
+};

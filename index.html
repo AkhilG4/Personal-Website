@@ -21,12 +21,22 @@
         <section class="whoami-section">
             <div class="container">
                 <h1 class="title" id="typewriter"></h1>
-                <p class="subtitle">Computer Science and Cybersecurity Student</p>
+                <p class="subtitle">UWA Graduate</p>
                 <img src="./images/gojo.jpeg" alt="Profile Picture" class="profile-pic">
                 <p class="description">
-                    Hi there! I'm a third-year student studying Computer Science and Cybersecurity at the University of Western Australia.
-                    I'm passionate about developing innovative solutions and continuously enhancing my skills in various programming languages and technologies.
+                    Bachelor of Science (B.Sc.) in Computer Science and Cybersecurity <br>
+                    WAM 79.5 / GPA 6.5
                 </p>
+
+                <div class="resume-container">
+                    <div class="resume-box">
+                        <a href="./Resume_Akhil.pdf" download="Akhil_Gorasia_Resume.pdf">
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+
+                
                 
                 <h2 class="section-title">Skills</h2>
                 <ul class="skills-list">
@@ -41,19 +51,42 @@
         
                 <h2 class="section-title">Projects</h2>
                 <div class="projects">
+                    <!-- Project 1 -->
                     <div class="project">
-                        <h3>Project One</h3>
-                        <p>Description of Project One. Highlighting key features and technologies used.</p>
+                        <h3>ICRAR Telescope Dashboard</h3>
+                        <p>
+                            Developed a full-stack web application dashboard to visualize telescope data for the International Centre for Radio Astronomy Research. Features included:
+                        </p>
+                        <ul>
+                            <li>Telescope selection and date range filtering</li>
+                            <li>Synchronized chart and table updates</li>
+                            <li>Sortable and filterable tables with column visibility toggles</li>
+                            <li>Data exporting, responsive design, and different color modes</li>
+                        </ul>
+                        <button class="view-more-btn" onclick="openModal('ICRAR Telescope Dashboard', ['./images/project1_screenshot1.png', './images/project1_screenshot2.png', './images/project1_screenshot3.png'])">
+                            View More Screenshots
+                        </button>
                     </div>
+                
+                    <!-- Project 2 -->
                     <div class="project">
-                        <h3>Project Two</h3>
-                        <p>Description of Project Two. Highlighting key features and technologies used.</p>
+                        <h3>Another Project</h3>
+                        <p>
+                            A description of another project with its features and goals.
+                        </p>
+                        <button class="view-more-btn" onclick="openModal('Another Project', ['./images/project2_screenshot1.png', './images/project2_screenshot2.png'])">
+                            View More Screenshots
+                        </button>
                     </div>
-                    <div class="project">
-                        <h3>Project Three</h3>
-                        <p>Description of Project Three. Highlighting key features and technologies used.</p>
+                </div>
+                
+                <!-- Modal Structure -->
+                <div id="projectModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal()">&times;</span>
+                        <h3 id="modal-title">Project Title</h3>
+                        <div id="modal-images" class="modal-images"></div>
                     </div>
-                    <!-- Add more projects as needed -->
                 </div>
             </div>
         </section>
