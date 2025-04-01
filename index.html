@@ -21,11 +21,10 @@
         <section class="whoami-section">
             <div class="container">
                 <h1 class="title" id="typewriter"></h1>
-                <p class="subtitle">UWA Graduate</p>
+                <p class="subtitle">Cybersecurity / Computer Science</p>
                 <img src="./images/gojo.jpeg" alt="Profile Picture" class="profile-pic">
                 <p class="description">
-                    Bachelor of Science (B.Sc.) in Computer Science and Cybersecurity <br>
-                    WAM 79.5 / GPA 6.5
+                    Bachelor of Science (B.Sc.) in Computer Science and Cybersecurity
                 </p>
 
                 <div class="resume-container">
@@ -49,46 +48,73 @@
                     <li>Node.js</li>
                 </ul>
         
-                <h2 class="section-title">Projects</h2>
-                <div class="projects">
-                    <!-- Project 1 -->
-                    <div class="project">
-                        <h3>ICRAR Telescope Dashboard</h3>
-                        <p>
-                            Developed a full-stack web application dashboard to visualize telescope data for the International Centre for Radio Astronomy Research. Features included:
-                        </p>
-                        <ul>
-                            <li>Telescope selection and date range filtering</li>
-                            <li>Synchronized chart and table updates</li>
-                            <li>Sortable and filterable tables with column visibility toggles</li>
-                            <li>Data exporting, responsive design, and different color modes</li>
-                        </ul>
-                        <button class="view-more-btn" onclick="openModal('ICRAR Telescope Dashboard', ['./images/project1_screenshot1.png', './images/project1_screenshot2.png', './images/project1_screenshot3.png'])">
-                            View More Screenshots
-                        </button>
-                    </div>
                 
-                    <!-- Project 2 -->
-                    <div class="project">
-                        <h3>Another Project</h3>
-                        <p>
-                            A description of another project with its features and goals.
-                        </p>
-                        <button class="view-more-btn" onclick="openModal('Another Project', ['./images/project2_screenshot1.png', './images/project2_screenshot2.png'])">
-                            View More Screenshots
-                        </button>
-                    </div>
                 </div>
                 
-                <!-- Modal Structure -->
-                <div id="projectModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close-btn" onclick="closeModal()">&times;</span>
-                        <h3 id="modal-title">Project Title</h3>
-                        <div id="modal-images" class="modal-images"></div>
-                    </div>
-                </div>
             </div>
+        </section>
+        
+        <section>
+            <section class="whoami-section">
+                <div class="container">
+                    
+                    <h2 class="section-title">Projects</h2>
+                    <div class="projects">
+                        <!-- Project 1 -->
+                        <div class="project">
+                            <h3>ICRAR Telescope Dashboard</h3>
+                            <p>
+                                Part in the development of a full-stack web application dashboard to visualise telescope data for the International Centre for Radio Astronomy Research. Features included:
+                            </p>
+                            <ul>
+                                <li>Telescope selection and date range filtering</li>
+                                <li>Synchronized chart and table updates</li>
+                                <li>Sortable and filterable tables with column visibility toggles</li>
+                                <li>Data exporting, responsive design, and different color modes</li>
+                            </ul>
+                            <p><strong>Technologies Used:</strong> React, TypeScript, Next.js, Tailwind CSS, Recharts, Axios</p>
+                        </div>
+                    
+                        <!-- Project 2 -->
+                        <div class="project">
+                            <h3>
+                                <a href="https://github.com/0x3F-Lab/love-letters" target="_blank" rel="noopener noreferrer">
+                                    Love Letters
+                                </a>
+                            </h3>
+                            <p>
+                                Part in the development of a full-stack web application that allowed users to create love letters and post them
+                                publicly as part of a unit project.
+                            </p>
+                            <ul>
+                                <li>Account creation, authentication, and anonymous posting</li>
+                                <li>Sharing, commenting, liking, and sorting of posts</li>
+                                <li>Users could connect with other users by sharing contact information</li>
+                                <li>Secure input validation, CSRF protection, and profile editing</li>
+                            </ul>
+                            <p><strong>Technologies Used:</strong> Python, Flask, SQL, Bootstrap, jQuery</p>
+                        </div>
+                        
+                        <!-- Project 3 -->
+                        <div class="project">
+                            <h3>
+                                <a href="https://github.com/0x3F-Lab/clock-in-system" target="_blank" rel="noopener noreferrer">
+                                    Clock-In System
+                                </a>
+                            </h3>
+                            <p>
+                                Django-based web application for managing employee clock-in and clock-out with a simple authentication system for managers and employees.
+                            </p>
+                            <ul>
+                                <li>Separate login options for managers (unique password) and employees (shop-wide passcode)</li>
+                                <li>Managers can view employee data and access management features</li>
+                                <li>Location based clock in and clock out system</li>
+                            </ul>
+                            <p><strong>Technologies Used:</strong> Python, Django</p>
+                        </div>
+                    </div>
+                    
+                </div>
         </section>
 
         <footer class="footer">

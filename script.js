@@ -116,32 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
     type();
 });
 
-function openModal(title, imagePaths) {
-    // Set the modal title
-    document.getElementById("modal-title").innerText = title;
+document.addEventListener("DOMContentLoaded", function () {
+    const projects = document.querySelectorAll(".project");
 
-    // Populate the modal with images
-    const modalImagesDiv = document.getElementById("modal-images");
-    modalImagesDiv.innerHTML = ""; // Clear existing content
-    imagePaths.forEach((path) => {
-        const img = document.createElement("img");
-        img.src = path;
-        img.alt = title + " Screenshot";
-        modalImagesDiv.appendChild(img);
-    });
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add("show");
+                    }, index * 200); // 200ms delay per project
+                }
+            });
+        },
+        {
+            threshold: 0.2,
+        }
+    );
 
-    // Display the modal
-    document.getElementById("projectModal").style.display = "flex";
-}
-
-function closeModal() {
-    document.getElementById("projectModal").style.display = "none";
-}
-
-// Optional: Close modal when clicking outside of it
-window.onclick = function (event) {
-    const modal = document.getElementById("projectModal");
-    if (event.target === modal) {
-        closeModal();
-    }
-};
+    projects.forEach((project) => observer.observe(project));
+});
